@@ -563,11 +563,11 @@ blockquote {
 	/** font-style: normal !important ; **/
 }
 .float-left {
-	width: 48% !important;
+	width: 41% !important;
 	float: left !important;
 }
 .float-right {
-	width: 50% !important;
+	width: 41% !important;
 	float: right !important;
 }
 .large {

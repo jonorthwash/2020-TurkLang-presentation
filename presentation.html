@@ -75,7 +75,8 @@
 					<div class="float-left">
 					<div class="box">
 						<p class="bbb">Our talk in a nutshell</p>
-						<p><span class="highlight">Turkic NFV forms</span> are <span class="highlight">more multifunctional</span> than normally assumed</p>
+						<p><span class="highlight">Turkic NFV forms</span> exhibit <span class="highlight">more syncretism</span> than normally assumed</p>
+						<p>This is important for <span class="highlight">NLP pipelines</span></p>
 						<!-- ul -->
 							<!-- li>Turkic non-finite verb forms often argued to be multifunctional</li -->
 							<!-- li>Commonly assumed multifunctionality of Turkic non-finite verb forms does not hold</li>
@@ -104,7 +105,8 @@
 							<li>Methodology</li>
 							<li>Results</li>
 						</ul>
-						<li>Outstanding issues</li>
+						<li>Why this is important for NLP</li>
+						<!-- li>Outstanding issues</li -->
 						<li>Conclusions</li>
 					</ul>
 					</div>
@@ -504,7 +506,7 @@
 					    <tr><th></th><th>complement clause</th><th>adnominal modifier</th><th>clausal subject</th><th>nominal subject</th><th>nominal object</th><!-- th>analysis</th --></tr>
 					  </thead>
 					  <tbody>
-					    <tr><td>gördüğüm</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>–</td><!-- td><gmk>vadj, vn</gmk></td --></tr>
+					    <tr><td>gördüğüm</td><td>–</td><td>✔</td><td>✔</td><td>✔</td><td>–</td><!-- td><gmk>vadj, vn</gmk></td --></tr>
 					    <tr><td>gören</td><td>–</td><td>✔</td><td>–</td><td>–</td><td>–</td><!-- td><gmk>vadj</gmk></td --></tr>
 					    <tr><td>gördüklerim</td><td>–</td><td>–</td><td>✔</td><td>✔</td><td>–</td><!-- td><gmk>vadj.subst</gmk></td --></tr>
 					    <tr><td>görenler</td><td>–</td><td>–</td><td>✔</td><td>✔</td><td>–</td><!-- td><gmk>vadj.subst</gmk></td --></tr>
@@ -512,6 +514,9 @@
 					    <tr><td>gideni</td><td>–</td><td>–</td><td>–</td><td>–</td><td>✔</td><!-- td><gmk>vadj.subst</gmk></td --></tr>
 					  </tbody>
 					</table>
+					<ul>
+						<li class="shrink">Note: all of these are "participle" uses</li>
+					</ul>
 					</ul>
 				</section>
 
@@ -693,6 +698,111 @@
 				</section>
 
 				<section>
+					<h2>Why it's important for NLP</h2>
+					<div class="box">
+						<h3 class="caln">Example NLP application</h3>
+						<span class="highlight-cyan">tokenisation → morphological analysis → syntax → semantics</span>
+						Example input: <em class="cyrillic">... барған кісі ...</em>
+					</div>
+					<div class="box float-left">
+						<h3 class="caln">Traditional approach</h3>
+						<div class="codeblock">
+							^барған/бар<tag>v</tag><tag>iv</tag><tag>ptcp</tag>$<br />
+							^кісі/кісі<tag>n</tag>$
+						</div>
+						↓<br/>
+						<div class="codeblock">
+							^барған/бар<tag>v</tag><tag>iv</tag><tag>ptcp</tag>$<br />
+							^кісі/кісі<tag>n</tag>$
+						</div>
+						<span class="highlight">↓</span><br/>
+						...
+					</div>
+					<div class="box float-right">
+						<h3 class="caln">Our approach</h3>
+						<div class="codeblock">
+							^барған/бар<tag>v</tag><tag>iv</tag><tag>vadj</tag>/бар<tag>v</tag><tag>iv</tag><tag>vadj</tag><tag>subst</tag>/бар<tag>v</tag><tag>iv</tag><tag>vn</tag>$<br />
+							^кісі/кісі<tag>n</tag>$
+						</div>
+						<span class="highlight">↓</span><br/>
+						<div class="codeblock">
+							^барған/бар<tag>v</tag><tag>iv</tag><tag>vadj</tag><br />
+							^кісі/кісі<tag>n</tag>$
+						</div>
+						↓<br/>
+						...
+					</div>
+				</section>
+
+				<section>
+					<h2>Conclusions</h2>
+					<ul>
+						<li>In-depth study of Turkic NFV-forming morphology</li>
+						<li>Traditionally assumed categories not coherent</li>
+						<ul class="shrink">
+							<li>Syncretism and historical factors led to incorrect groupings</li>
+							<li>Also focus on similarity of functions (syntax) without considering morphology or semantics</li>
+						</ul>
+						<li>New approach takes into account morphology, syntax, and semantics</li>
+						<li>Important for an NLP pipeline</li>
+					</ul>
+				</section>
+
+				<section>
+
+					<section style="font-family: FreeSerif;">
+						<h2>Thank you!</h2>
+						<b>Based on collaborations with and input from:</b>
+						<p>Aziyana Bayyr-ool, Çağrı Çöltekin, Memduh Gökırmak, Sardana Ivanovna, Tolgonay Kubatova, Aibek Makazhanov, İlnar Salimzianov</p>
+						<br/>
+						<p><b>Also thanks to:</b>
+						<ul>
+							<li>reviewers for and audiences at Tu+4 and SLE workshop on multifunctionality and syncretism in NFV forms</li>
+							<li>Jeremy Fahringer for feedback on the map</li>
+						</ul>
+						</p>
+						<!-- p class="large">Сагъ олунгыз! · Sağ oluñız! <lg>crh</lg></p>
+						<p class="large">Raxmet! · Рахмет! <lg>kaa</lg></p>
+						<p class="large">Рахмет! · Rahmet! · ‫راحمەت!‬ <lg>kaz</lg></p>
+						<p class="large">Ракмат! · ‫راقمات!‬ <lg>kir</lg></p>
+						<p class="large">Sag boluň! · Саг болуң! <lg>tuk</lg></p>
+						<p class="large">‫رەھمەت!‬ · Рәһмәт! · Rehmet! <lg>uig</lg></p>
+						<p class="large">Rahmat! · Раҳмат! <lg>uzb</lg></p -->
+					</section>
+
+					<section>
+						<h2>Appendix slides</h2>
+					</section>
+
+					<section>
+						<h2>Verbal vs. deverbal (nouns)</h2>
+					<ex>
+					  <words>
+					    <wd>Дөңгөлөк<transcr>døŋɡøløk</transcr><igt>tyre</igt></wd>
+					    <wd>чоң<transcr>ʧoɴ</transcr><igt>big</igt></wd>
+					    <wd>жолдо<transcr>ʤoɫdo</transcr><igt>road-&#8288;<gmk>loc</gmk></igt></wd>
+					    <wd class="bbb">жарылышы<transcr>ʤɑɾɯɫɯʃɯ</transcr><igt>make.explode-&#8288;<gmk>pass</gmk>&#8288;-&#8288;<gmk>vn</gmk>&#8288;-&#8288;<gmk>poss.3</gmk></igt></wd>
+					    <wd>мүмкүн.&#8288;<lg>kir</lg><transcr>mymkyn</transcr><igt>possible-&#8288;<gmk>cop.npst.3</gmk></igt></wd>
+					  </words>
+					  <gloss>"The tyre might <bbb>explode</bbb> on the highway."</gloss>
+					</ex>
+					<br />
+					<ex>
+					  <words>
+					    <wd>Чоң<transcr>ʧoɴ</transcr><igt>big</igt></wd>
+					    <wd>жолдогу<transcr>ʤoɫdoʁu</transcr><igt>road-&#8288;<gmk>loc</gmk>&#8288;-&#8288;<gmk>attr</gmk></igt></wd>
+					    <wd>дөңгөлөктүн<transcr>døŋɡøløktyn</transcr><igt>tyre-&#8288;<gmk>gen</gmk></igt></wd>
+					    <wd class="bbb">жарылышы<transcr>ʤɑɾɯɫɯʃɯ</transcr><igt>explosion-&#8288;<gmk>poss.3</gmk></igt></wd>
+					    <wd>өтө<transcr>øtø</transcr><igt>very</igt></wd>
+					    <wd>кайгылуу<transcr>qɑjʁɯɫuː</transcr><igt>woe-full<gmk>loc</gmk></igt></wd>
+					    <wd>болду.&#8288;<lg>kir</lg><transcr>boɫdu</transcr><igt>be-&#8288;<gmk>past</gmk></igt></wd>
+					  </words>
+					  <gloss>"The <bbb>explosion</bbb> of the tyre on the highway was really awful."</gloss>
+					</ex>					
+						
+					</section>
+
+				<section>
 					<h2>Outstanding issues: Tatar infinitive</h2>
 					<ul>
 						<li>Appears to be used as all four categories?</li>
@@ -825,73 +935,6 @@
 					</ex>
 					</ul>
 				</section>
-
-				<section>
-					<h2>Conclusions</h2>
-					<ul>
-						<li>In-depth study of Turkic NFV-forming morphology</li>
-						<li>Traditionally assumed categories not coherent</li>
-						<ul class="shrink">
-							<li>Syncretism and historical factors led to incorrect groupings</li>
-							<li>Also focus on similarity of functions (syntax) without considering morphology or semantics</li>
-						</ul>
-						<li>New approach takes into account morphology, syntax, and semantics</li>
-					</ul>
-				</section>
-
-				<section>
-
-					<section style="font-family: FreeSerif;">
-						<h2>Thank you!</h2>
-						<b>Based on collaborations with and input from:</b>
-						<p>Aziyana Bayyr-ool, Çağrı Çöltekin, Memduh Gökırmak, Sardana Ivanovna, Tolgonay Kubatova, Aibek Makazhanov, İlnar Salimzianov</p>
-						<br/>
-						<p><b>Also thanks to:</b>
-						<ul>
-							<li>reviewers for and audiences at Tu+4 and SLE workshop on multifunctionality and syncretism in NFV forms</li>
-							<li>Jeremy Fahringer for feedback on the map</li>
-						</ul>
-						</p>
-						<!-- p class="large">Сагъ олунгыз! · Sağ oluñız! <lg>crh</lg></p>
-						<p class="large">Raxmet! · Рахмет! <lg>kaa</lg></p>
-						<p class="large">Рахмет! · Rahmet! · ‫راحمەت!‬ <lg>kaz</lg></p>
-						<p class="large">Ракмат! · ‫راقمات!‬ <lg>kir</lg></p>
-						<p class="large">Sag boluň! · Саг болуң! <lg>tuk</lg></p>
-						<p class="large">‫رەھمەت!‬ · Рәһмәт! · Rehmet! <lg>uig</lg></p>
-						<p class="large">Rahmat! · Раҳмат! <lg>uzb</lg></p -->
-					</section>
-
-					<section>
-						<h2>Appendix slides</h2>
-					</section>
-
-					<section>
-						<h2>Verbal vs. deverbal (nouns)</h2>
-					<ex>
-					  <words>
-					    <wd>Дөңгөлөк<transcr>døŋɡøløk</transcr><igt>tyre</igt></wd>
-					    <wd>чоң<transcr>ʧoɴ</transcr><igt>big</igt></wd>
-					    <wd>жолдо<transcr>ʤoɫdo</transcr><igt>road-&#8288;<gmk>loc</gmk></igt></wd>
-					    <wd class="bbb">жарылышы<transcr>ʤɑɾɯɫɯʃɯ</transcr><igt>make.explode-&#8288;<gmk>pass</gmk>&#8288;-&#8288;<gmk>vn</gmk>&#8288;-&#8288;<gmk>poss.3</gmk></igt></wd>
-					    <wd>мүмкүн.&#8288;<lg>kir</lg><transcr>mymkyn</transcr><igt>possible-&#8288;<gmk>cop.npst.3</gmk></igt></wd>
-					  </words>
-					  <gloss>"The tyre might <bbb>explode</bbb> on the highway."</gloss>
-					</ex>
-					<br />
-					<ex>
-					  <words>
-					    <wd>Чоң<transcr>ʧoɴ</transcr><igt>big</igt></wd>
-					    <wd>жолдогу<transcr>ʤoɫdoʁu</transcr><igt>road-&#8288;<gmk>loc</gmk>&#8288;-&#8288;<gmk>attr</gmk></igt></wd>
-					    <wd>дөңгөлөктүн<transcr>døŋɡøløktyn</transcr><igt>tyre-&#8288;<gmk>gen</gmk></igt></wd>
-					    <wd class="bbb">жарылышы<transcr>ʤɑɾɯɫɯʃɯ</transcr><igt>explosion-&#8288;<gmk>poss.3</gmk></igt></wd>
-					    <wd>өтө<transcr>øtø</transcr><igt>very</igt></wd>
-					    <wd>кайгылуу<transcr>qɑjʁɯɫuː</transcr><igt>woe-full<gmk>loc</gmk></igt></wd>
-					    <wd>болду.&#8288;<lg>kir</lg><transcr>boɫdu</transcr><igt>be-&#8288;<gmk>past</gmk></igt></wd>
-					  </words>
-					  <gloss>"The <bbb>explosion</bbb> of the tyre on the highway was really awful."</gloss>
-					</ex>					
-						
-					</section>
 
 
 					<section>
