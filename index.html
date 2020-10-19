@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+
+var windowObjectReference;
+var windowFeatures = "menubar=no,toolbar=no,location=no,resizable=yes,scrollbars=no,status=no";
+
+function openRequestedPopup() {
+  windowObjectReference = window.open("presentation.html", "Presentation", windowFeatures);
+}
+
+</script>
+</head>
+<body>
+	<a href="javascript:openRequestedPopup();">open presentation in clear window</a>
+</body>
+</html>
